@@ -1,8 +1,7 @@
 var PersonalityInsightsV3 = require('watson-developer-cloud/personality-insights/v3');
 var beeMovieScript = require('./bee_movie');
 var credentials = require('./credentials');
-
-var personality_insights = new PersonalityInsightsV3(credentials);
+var personality_insights = new PersonalityInsightsV3(credentials.credentials);
 
 personality_insights.profile(
   {
