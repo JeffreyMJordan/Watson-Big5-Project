@@ -8,3 +8,4 @@ export const getBigFive = (content, version) => {
            version: version}
   }).then(res => console.log(res));
 };
+
