@@ -32737,13 +32737,13 @@ module.exports = 0 / 0;
 
 var _watson_util = __webpack_require__(176);
 
-var WatsonAPIutil = _interopRequireWildcard(_watson_util);
+var WatsonApiUtil = _interopRequireWildcard(_watson_util);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 document.addEventListener('DOMContentLoaded', function () {
-  console.log(WatsonAPIutil);
-  window.getFormInsight = WatsonAPIutil.getFormInsight;
+  window.getFormInsight = WatsonApiUtil.getFormInsight;
+  window.getToken = WatsonApiUtil.getToken;
 });
 
 /***/ }),
@@ -32770,6 +32770,12 @@ var getFormInsight = exports.getFormInsight = function getFormInsight(content) {
     } else {
       console.log(JSON.stringify(response, null, 2));
     }
+  });
+};
+
+var getToken = exports.getToken = function getToken() {
+  return fetch('/api/token/tone_analyzer').then(function (response) {
+    return response.text();
   });
 };
 

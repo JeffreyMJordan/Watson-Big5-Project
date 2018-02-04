@@ -1,3 +1,21 @@
 I currently need to enable CORS to use the Watson API on the client side 
 To do this, I need to set up some way that I request a token and include it with my request in the header 
 
+
+In the webpack example, IBM used it like this:
+
+var ltAuthService = new watson.AuthorizationV1({
+  username: ,
+  password: ,
+  url: watson.ToneAnalyzerV3.URL
+});
+
+app.get('/api/token/tone_analyzer', function(req, res) {
+  ltAuthService.getToken(function(err, token) {
+    if (err) {
+      console.log('Error retrieving token: ', err);
+      return res.status(500).send('Error retrieving token');
+    }
+    res.send(token);
+  });
+});
