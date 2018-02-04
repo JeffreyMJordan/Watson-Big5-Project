@@ -7,7 +7,7 @@ personality_insights.profile(
   {
     content: JSON.stringify(beeMovieScript),
     content_type: 'text/plain',
-    consumption_preferences: true
+    // consumption_preferences: true
   },
   function(err, response) {
     if (err) {

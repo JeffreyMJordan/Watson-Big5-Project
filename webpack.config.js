@@ -21,5 +21,12 @@ module.exports = {
   devtool: 'source-map',
   resolve: {
     extensions: ['.js', '.jsx', '*']
-  }
+  },
+  node: {
+    // see http://webpack.github.io/docs/configuration.html#node
+    // and https://webpack.js.org/configuration/node/
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
+  },
 };
