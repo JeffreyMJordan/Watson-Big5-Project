@@ -48,7 +48,20 @@ const personality_insights = new PersonalityInsightsV3(credentials.credentials);
 
 app.post('/api/personality_insight', (req, res) => {
   console.log(req.body);
-  res.send("Lol");
+  personality_insights.profile(
+    {
+      content: JSON.stringify(req.body.content),
+      content_type: 'text/plain',
+      // consumption_preferences: true
+    },
+    function(err, response) {
+      if (err) {
+        res.send(JSON.stringify(err))
+      } else {
+        res.send(JSON.stringify(response, null, 2));
+      }
+    }
+  );
 });
 
 app.get('/', function(req, res) {
