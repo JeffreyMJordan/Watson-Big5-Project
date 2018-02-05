@@ -2,10 +2,9 @@ let PersonalityInsightsV3 = require('watson-developer-cloud/personality-insights
 const credentials = require('../credentials');
 import * as TokenUtil from './token_util';
 
-console.log(credentials.credentials);
 export const getFormInsight = (content) => {
   const personality_insights = new PersonalityInsightsV3({
-    token: TokenUtil.getAuthToken(),
+    token: TokenUtil.getToken(),
     version_date: '2016-10-19'
   });
   return personality_insights.profile({

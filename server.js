@@ -6,6 +6,7 @@ var credentials = require('./credentials');
 var webpackDevMiddleware = require('webpack-dev-middleware');
 var webpack = require('webpack');
 var webpackConfig = require('./webpack.config');
+var path = require('path');
 
 var compiler = webpack(webpackConfig);
 
@@ -32,6 +33,10 @@ app.get('/api/token/personality_insight', function(req, res) {
     }
     res.send(token);
   });
+});
+
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 var port = 3000;

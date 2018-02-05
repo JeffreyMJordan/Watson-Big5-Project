@@ -1,17 +1,5 @@
-var watson = require('watson-developer-cloud');
-var credentials = require('../credentials');
-
-var authorization = new watson.AuthorizationV1({
- username: credentials.credentials.username,
- password: credentials.credentials.password,
- url: watson.PersonalityInsightsV3.URL
-});
-
-export const getAuthToken = () => authorization.getToken(function (err, token) {
- if (!token) {
-   console.log('error:', err);
- } else {
-   console.log(token)
-   return token;
- }
-});
+export const getToken = () => {
+  return fetch('/api/token/personality_insight').then(function(res){
+    return res.text();
+  });
+};
