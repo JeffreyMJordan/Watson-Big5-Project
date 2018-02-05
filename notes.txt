@@ -19,3 +19,9 @@ app.get('/api/token/tone_analyzer', function(req, res) {
     res.send(token);
   });
 });
+
+
+
+
+It seems like I'm gonna have to set up a server with express 
+This should be decent practice using express, lol

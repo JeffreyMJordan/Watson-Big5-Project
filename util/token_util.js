@@ -11,6 +11,7 @@ export const getAuthToken = () => authorization.getToken(function (err, token) {
  if (!token) {
    console.log('error:', err);
  } else {
+   console.log(token)
    return token;
  }
 });

@@ -16,14 +16,16 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "cfenv": "1.0.x",
+    "express": "^4.12.4",
     "fs": "0.0.1-security",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "redux": "^3.7.2",
-    "watson-developer-cloud": "^3.0.5",
-    "webpack": "^3.10.0",
-    "cfenv": "1.0.x",
-    "express": "4.12.x",
-    "watson-developer-cloud": "*"
+    "watson-developer-cloud": "*",
+    "webpack": "^3.10.0"
+  },
+  "devDependencies": {
+    "webpack-dev-middleware": "^2.0.4"
   }
 }

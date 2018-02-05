@@ -8,7 +8,6 @@ export const getFormInsight = (content) => {
     token: TokenUtil.getAuthToken(),
     version_date: '2016-10-19'
   });
-
   return personality_insights.profile({
     content: JSON.stringify(content),
     content_type: 'text/plain'},
