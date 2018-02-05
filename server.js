@@ -7,7 +7,10 @@ var webpackDevMiddleware = require('webpack-dev-middleware');
 var webpack = require('webpack');
 var webpackConfig = require('./webpack.config');
 var path = require('path');
-
+let PersonalityInsightsV3 = require('watson-developer-cloud/personality-insights/v3');
+var bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 var compiler = webpack(webpackConfig);
 
 app.use(
@@ -15,6 +18,12 @@ app.use(
     publicPath: '/' 
   })
 );
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 app.use(express.static('public/'));
 
@@ -33,6 +42,13 @@ app.get('/api/token/personality_insight', function(req, res) {
     }
     res.send(token);
   });
+});
+
+const personality_insights = new PersonalityInsightsV3(credentials.credentials);
+
+app.post('/api/personality_insight', (req, res) => {
+  console.log(req.body);
+  res.send("Lol");
 });
 
 app.get('/', function(req, res) {
