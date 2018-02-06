@@ -25,3 +25,20 @@ app.get('/api/token/tone_analyzer', function(req, res) {
 
 It seems like I'm gonna have to set up a server with express 
 This should be decent practice using express, lol
+
+
+
+______Feb 6th, 2018______
+How do I structure the components? 
+Maybe I could start with a text form, have them submit it, 
+then have a component to display the assessment? 
+Yeah, I like it 
+
+I think my workflow should be as follows 
+
+1. Complete text form 
+2. Complete facebook login (this is more interesting)
+3. Visualize the Watson Big5 assessment
+
+
+I'll just display the raw JSON object for the time being, lol 

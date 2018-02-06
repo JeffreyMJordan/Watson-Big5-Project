@@ -1,8 +1,9 @@
 import React from 'react';
+import TextFormContainer from './text_form/text_form_container';
 
 const App = () => (
   <div className="main">
-    React is working!  
+    <TextFormContainer />
   </div>
 );
 
