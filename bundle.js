@@ -605,6 +605,14 @@ var getFormInsight = exports.getFormInsight = function getFormInsight(content) {
   });
 };
 
+var getTwitterInsight = exports.getTwitterInsight = function getTwitterInsight(screen_name) {
+  return $.ajax({
+    method: "POST",
+    url: '/api/twitter_insight',
+    data: { screen_name: screen_name }
+  });
+};
+
 /***/ }),
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -1457,6 +1465,10 @@ var _reactDom = __webpack_require__(49);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _assessment_actions = __webpack_require__(46);
+
+var AssessmentActions = _interopRequireWildcard(_assessment_actions);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
@@ -1466,6 +1478,8 @@ document.addEventListener('DOMContentLoaded', function () {
   window.getFormInsight = WatsonApiUtil.getFormInsight;
   var store = (0, _store2.default)();
   _reactDom2.default.render(_react2.default.createElement(_root2.default, { store: store }), root);
+  window.dispatch = store.dispatch;
+  window.getTwitterInsight = AssessmentActions.getTwitterAssessment;
 });
 
 /***/ }),
@@ -3627,7 +3641,7 @@ exports.default = function () {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getAssessment = exports.receiveAssessment = exports.RECEIVE_ASSESSMENT = undefined;
+exports.getTwitterAssessment = exports.getAssessment = exports.receiveAssessment = exports.RECEIVE_ASSESSMENT = undefined;
 
 var _watson_util = __webpack_require__(8);
 
@@ -3647,6 +3661,14 @@ var receiveAssessment = exports.receiveAssessment = function receiveAssessment(a
 var getAssessment = exports.getAssessment = function getAssessment(content) {
   return function (dispatch) {
     return WatsonApiUtl.getFormInsight(content).then(function (res) {
+      return dispatch(receiveAssessment(res));
+    });
+  };
+};
+
+var getTwitterAssessment = exports.getTwitterAssessment = function getTwitterAssessment(screen_name) {
+  return function (dispatch) {
+    return WatsonApiUtl.getTwitterInsight(screen_name).then(function (res) {
       return dispatch(receiveAssessment(res));
     });
   };
