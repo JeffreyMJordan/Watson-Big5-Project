@@ -73,9 +73,21 @@ app.post('/api/twitter_insight', (req, res) => {
       let body = "";
       tweets.forEach((tweet) => {
         body += tweet.full_text;
-        console.log(tweet.full_text);
       });
-      // console.log(body);
+      personality_insights.profile(
+        {
+          content: body,
+          content_type: 'text/plain',
+          // consumption_preferences: true
+        },
+        function(err, response) {
+          if (err) {
+            res.send(JSON.stringify(err));
+          } else {
+            res.send(response);
+          }
+        }
+      );
     }else{
       console.log(error);
     }
