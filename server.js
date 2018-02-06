@@ -68,11 +68,14 @@ app.post('/api/personality_insight', (req, res) => {
 });
 
 app.post('/api/twitter_insight', (req, res) => {
-  T.get('statuses/user_timeline', {screen_name: req.body.screen_name, count: 200}, function(error, tweets, response) {
+  T.get('statuses/user_timeline', {screen_name: req.body.screen_name, count: 200, tweet_mode: 'extended'}, function(error, tweets, response) {
     if (!error) {
+      let body = "";
       tweets.forEach((tweet) => {
-        console.log(tweet.text);
+        body += tweet.full_text;
+        console.log(tweet.full_text);
       });
+      // console.log(body);
     }else{
       console.log(error);
     }
