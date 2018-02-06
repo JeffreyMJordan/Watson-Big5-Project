@@ -12,6 +12,9 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 var compiler = webpack(webpackConfig);
+var Twit = require('twitter');
+var twitter_credentials = require('./twitter_credentials');
+var T = new Twit(twitter_credentials.credentials);
 
 app.use(
   webpackDevMiddleware(compiler, {
@@ -62,6 +65,18 @@ app.post('/api/personality_insight', (req, res) => {
       }
     }
   );
+});
+
+app.post('/api/twitter_insight', (req, res) => {
+  T.get('statuses/user_timeline', {screen_name: req.body.screen_name, count: 200}, function(error, tweets, response) {
+    if (!error) {
+      tweets.forEach((tweet) => {
+        console.log(tweet.text);
+      });
+    }else{
+      console.log(error);
+    }
+  });
 });
 
 app.get('/', function(req, res) {
