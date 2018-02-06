@@ -12,5 +12,5 @@ export const receiveAssessment = (assessment) => {
 
 export const getAssessment = (content) => (dispatch) => {
   return WatsonApiUtl.getFormInsight(content)
-    .then(res => receiveAssessment(res));
+    .then(res => dispatch(receiveAssessment(res)));
 };

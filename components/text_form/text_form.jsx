@@ -7,17 +7,28 @@ class TextForm extends React.Component{
       content: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-  
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(type){
+    return (e) => {
+      this.setState({[type]: e.target.value});
+    };
+  }
+
+  handleSubmit(){
+    this.props.getAssessment(this.state.content);
   }
 
 
   render(){
     return (
       <div className="form">
-        <form action="">
+        <form action="" onSubmit={this.handleSubmit}>
           <label htmlFor="">Corpus
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <textarea onChange={this.handleChange('content')} name="" id="" cols="30" rows="10"></textarea>
           </label>
+          <input type="submit" value="Submit"/>
         </form>
       </div>
     );
