@@ -58,7 +58,7 @@ app.post('/api/personality_insight', (req, res) => {
       if (err) {
         res.send(JSON.stringify(err))
       } else {
-        res.send(JSON.stringify(response, null, 2));
+        res.send(response);
       }
     }
   );
