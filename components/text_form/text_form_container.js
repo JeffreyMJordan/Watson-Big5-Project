@@ -3,7 +3,6 @@ import {getAssessment} from '../../actions/assessment_actions';
 import TextForm from './text_form';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state);
   return {assessment: state.assessment};
 };
 
