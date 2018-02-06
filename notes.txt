@@ -42,3 +42,12 @@ I think my workflow should be as follows
 
 
 I'll just display the raw JSON object for the time being, lol 
+
+
+Facebook says they don't want people doing sentiment analysis with their API...
+Hmmm, maybe I could use a different api? What about twitter? 
+
+
+Twitter is a good option
+I could have users just upload a twitter url 
+Yeah, that's a good idea 
