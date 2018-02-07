@@ -32,7 +32,6 @@ input[type="submit"],
 textarea,
 button {
   appearance: none;
-
 }
 
 button,
@@ -53,4 +52,15 @@ input[type="submit"] {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.flex-horizontal{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+form{
+  border: 1px solid black;
 }

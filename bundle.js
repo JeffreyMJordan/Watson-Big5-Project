@@ -42946,12 +42946,12 @@ var TextForm = function (_React$Component) {
         { className: "form flex-vertical" },
         _react2.default.createElement(
           "form",
-          { className: "flex-vertical", action: "", onSubmit: this.handleSubmit },
+          { className: "flex-horizontal", action: "", onSubmit: this.handleSubmit },
           _react2.default.createElement(
             "label",
-            { htmlFor: "" },
+            { className: "flex-vertical", htmlFor: "" },
             "Twitter username",
-            _react2.default.createElement("textarea", { onChange: this.handleChange('content'), name: "", id: "", cols: "30", rows: "10" })
+            _react2.default.createElement("input", { type: "text", onChange: this.handleChange('content') })
           ),
           _react2.default.createElement("input", { type: "submit", value: "Submit" })
         )
