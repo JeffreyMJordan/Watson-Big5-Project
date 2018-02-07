@@ -51,3 +51,9 @@ Hmmm, maybe I could use a different api? What about twitter?
 Twitter is a good option
 I could have users just upload a twitter url 
 Yeah, that's a good idea 
+
+
+
+Ok, so the twitter username is working 
+Now to add a visualization 
+Actually, lemme do the css first

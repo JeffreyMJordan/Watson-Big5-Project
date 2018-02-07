@@ -42943,10 +42943,10 @@ var TextForm = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         "div",
-        { className: "form" },
+        { className: "form flex-vertical" },
         _react2.default.createElement(
           "form",
-          { action: "", onSubmit: this.handleSubmit },
+          { className: "flex-vertical", action: "", onSubmit: this.handleSubmit },
           _react2.default.createElement(
             "label",
             { htmlFor: "" },

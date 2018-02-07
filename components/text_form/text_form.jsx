@@ -23,8 +23,8 @@ class TextForm extends React.Component{
 
   render(){
     return (
-      <div className="form">
-        <form action="" onSubmit={this.handleSubmit}>
+      <div className="form flex-vertical">
+        <form className="flex-vertical" action="" onSubmit={this.handleSubmit}>
           <label htmlFor="">Twitter username
             <textarea onChange={this.handleChange('content')} name="" id="" cols="30" rows="10"></textarea>
           </label>

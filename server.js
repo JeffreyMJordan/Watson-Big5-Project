@@ -98,6 +98,10 @@ app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname + '/index.html'));
 });
 
+app.get('/styling.css', function(req, res){
+  res.sendFile(path.join(__dirname + '/styling.css'));
+});
+
 var port = 3000;
 
 app.listen(port, function() {
