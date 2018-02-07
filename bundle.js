@@ -42872,6 +42872,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
     getAssessment: function getAssessment(content) {
       return dispatch((0, _assessment_actions.getAssessment)(content));
+    },
+    getTwitterAssessment: function getTwitterAssessment(screen_name) {
+      return dispatch((0, _assessment_actions.getTwitterAssessment)(screen_name));
     }
   };
 };
@@ -42933,7 +42936,7 @@ var TextForm = function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit() {
-      this.props.getAssessment(this.state.content);
+      this.props.getTwitterAssessment(this.state.content);
     }
   }, {
     key: "render",
@@ -42947,7 +42950,7 @@ var TextForm = function (_React$Component) {
           _react2.default.createElement(
             "label",
             { htmlFor: "" },
-            "Corpus",
+            "Twitter username",
             _react2.default.createElement("textarea", { onChange: this.handleChange('content'), name: "", id: "", cols: "30", rows: "10" })
           ),
           _react2.default.createElement("input", { type: "submit", value: "Submit" })

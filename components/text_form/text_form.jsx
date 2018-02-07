@@ -17,7 +17,7 @@ class TextForm extends React.Component{
   }
 
   handleSubmit(){
-    this.props.getAssessment(this.state.content);
+    this.props.getTwitterAssessment(this.state.content);
   }
 
 
@@ -25,7 +25,7 @@ class TextForm extends React.Component{
     return (
       <div className="form">
         <form action="" onSubmit={this.handleSubmit}>
-          <label htmlFor="">Corpus
+          <label htmlFor="">Twitter username
             <textarea onChange={this.handleChange('content')} name="" id="" cols="30" rows="10"></textarea>
           </label>
           <input type="submit" value="Submit"/>

@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import {getAssessment} from '../../actions/assessment_actions';
+import {getAssessment, getTwitterAssessment} from '../../actions/assessment_actions';
 import TextForm from './text_form';
 
 const mapStateToProps = (state, ownProps) => {
@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    getAssessment: (content) => dispatch(getAssessment(content))
+    getAssessment: (content) => dispatch(getAssessment(content)),
+    getTwitterAssessment: (screen_name) => dispatch(getTwitterAssessment(screen_name))
   };
 };
 
