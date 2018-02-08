@@ -42948,7 +42948,7 @@ var TextForm = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         "div",
-        { className: "text-form flex-horizontal" },
+        { className: "text-form flex-horizontal padding-vert-5" },
         _react2.default.createElement(
           "div",
           { className: "explainer-text med-font" },
@@ -42957,8 +42957,13 @@ var TextForm = function (_React$Component) {
         _react2.default.createElement(
           "form",
           { className: "flex-horizontal", action: "", onSubmit: this.handleSubmit },
+          _react2.default.createElement(
+            "div",
+            { className: "margin-horiz-5" },
+            "@"
+          ),
           _react2.default.createElement("input", { type: "text", onChange: this.handleChange('content') }),
-          _react2.default.createElement("input", { type: "submit", value: "Submit" })
+          _react2.default.createElement("input", { className: "submit padding-horiz-5 flex-horizontal", type: "submit", value: "Submit" })
         )
       );
     }

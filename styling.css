@@ -63,6 +63,7 @@ input[type="submit"] {
 
 form{
   border: 1px solid black;
+  background: white;
 }
 
 input{
@@ -100,9 +101,33 @@ input{
   font-size: 150%:
 }
 
+.padding-vert-5{
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
 .explainer-text{
   width: 50%;
 }
 
+.text-form{
+  background: rgba(194, 194, 194, 0.671);
+}
 
+.margin-horiz-5{
+  margin-left: 5px;
+  margin-right: 5px;
+}
 
+.padding-horiz-5{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.submit{
+  border-left: 1px solid black;
+}
+
+.submit:hover{
+  background: rgb(243, 243, 243);
+}
