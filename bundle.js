@@ -43099,9 +43099,13 @@ var Header = function (_React$Component) {
         "div",
         { className: "header flex-horizontal" },
         _react2.default.createElement(
-          "h1",
-          null,
-          "Big 5 Twitter Analyzer"
+          "div",
+          { className: "blue-sheet flex-horizontal" },
+          _react2.default.createElement(
+            "h1",
+            null,
+            "Big 5 Twitter Analyzer"
+          )
         )
       );
     }

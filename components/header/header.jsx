@@ -8,7 +8,9 @@ class Header extends React.Component{
   render(){
     return (
       <div className="header flex-horizontal">
-        <h1>Big 5 Twitter Analyzer</h1>
+        <div className="blue-sheet flex-horizontal">
+          <h1>Big 5 Twitter Analyzer</h1>
+        </div>
       </div>
     );
   }
