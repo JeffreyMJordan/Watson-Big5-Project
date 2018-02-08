@@ -23,11 +23,12 @@ class TextForm extends React.Component{
 
   render(){
     return (
-      <div className="form flex-vertical">
+      <div className="text-form flex-horizontal">
+        <div className="explainer-text med-font">
+          Enter the username for any public twitter account to receive a detailed Big 5 personality analysis.
+        </div>
         <form className="flex-horizontal" action="" onSubmit={this.handleSubmit}>
-          <label className="flex-vertical" htmlFor="">Twitter username
             <input type="text" onChange={this.handleChange('content')}></input>
-          </label>
           <input type="submit" value="Submit"/>
         </form>
       </div>

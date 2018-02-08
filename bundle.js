@@ -42948,16 +42948,16 @@ var TextForm = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         "div",
-        { className: "form flex-vertical" },
+        { className: "text-form flex-horizontal" },
+        _react2.default.createElement(
+          "div",
+          { className: "explainer-text med-font" },
+          "Enter the username for any public twitter account to receive a detailed Big 5 personality analysis."
+        ),
         _react2.default.createElement(
           "form",
           { className: "flex-horizontal", action: "", onSubmit: this.handleSubmit },
-          _react2.default.createElement(
-            "label",
-            { className: "flex-vertical", htmlFor: "" },
-            "Twitter username",
-            _react2.default.createElement("input", { type: "text", onChange: this.handleChange('content') })
-          ),
+          _react2.default.createElement("input", { type: "text", onChange: this.handleChange('content') }),
           _react2.default.createElement("input", { type: "submit", value: "Submit" })
         )
       );
