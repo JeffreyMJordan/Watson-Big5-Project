@@ -3,7 +3,7 @@ import Chart from './chart';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-
+    personality: state.assessment.personality
   };
 };
 
