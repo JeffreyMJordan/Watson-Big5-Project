@@ -66411,8 +66411,8 @@ var Bars = function (_React$Component) {
           null,
           _react2.default.createElement(
             "text",
-            { x: xScale(datum.name) + 27 - (datum.percentile * 100).toString().slice(0, 2).length, y: yScale(datum.percentile * 100) - 3 },
-            (datum.percentile * 100).toString().slice(0, 2)
+            { x: xScale(datum.name) + 27, y: yScale(datum.percentile * 100) - 3 },
+            Math.floor(datum.percentile * 100)
           ),
           _react2.default.createElement("rect", {
             key: datum.name,
