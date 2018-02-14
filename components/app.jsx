@@ -9,7 +9,6 @@ const App = () => (
     <Header />
     <TextFormContainer />
     <ChartContainer />
-    <AssessmentDisplayContainer />
 
   </div>
 );

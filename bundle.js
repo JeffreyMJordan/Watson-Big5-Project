@@ -19098,8 +19098,7 @@ var App = function App() {
     { className: 'main' },
     _react2.default.createElement(_header2.default, null),
     _react2.default.createElement(_text_form_container2.default, null),
-    _react2.default.createElement(_chart_container2.default, null),
-    _react2.default.createElement(_assessment_display_container2.default, null)
+    _react2.default.createElement(_chart_container2.default, null)
   );
 };
 
@@ -19468,14 +19467,24 @@ var Chart = function (_React$Component) {
         { className: "chart flex-vertical" },
         _react2.default.createElement(
           "svg",
-          { width: svgDimensions.width, height: svgDimensions.height },
+          { className: "flex-vertical", width: svgDimensions.width, height: svgDimensions.height },
           _react2.default.createElement(_axes2.default, { scales: { xScale: xScale, yScale: yScale }, margins: margins, svgDimensions: svgDimensions }),
           _react2.default.createElement(_bars2.default, {
             scales: { xScale: xScale, yScale: yScale },
             margins: margins,
             data: this.props.personality,
             svgDimensions: svgDimensions
-          })
+          }),
+          _react2.default.createElement(
+            "text",
+            { transform: "translate(" + 20 + ", " + (svgDimensions.height / 2 + 13) + ")rotate(-90)" },
+            "Percentile"
+          ),
+          _react2.default.createElement(
+            "text",
+            { transform: "translate(" + (svgDimensions.width / 2 - 40) + ", " + (svgDimensions.height + margins.top - 100) + ")" },
+            "Personality Traits"
+          )
         )
       );
     }

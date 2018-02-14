@@ -22,7 +22,8 @@ class Chart extends React.Component{
                               .range([svgDimensions.height - margins.bottom, margins.top]);
     return (
       <div className="chart flex-vertical">
-        <svg width={svgDimensions.width} height={svgDimensions.height}>
+        {/* <h1>Big 5 Analysis for: </h1> */}
+        <svg className="flex-vertical" width={svgDimensions.width} height={svgDimensions.height}>
           <Axes scales={{xScale, yScale}} margins={margins} svgDimensions={svgDimensions}/>
 
           <Bars 
@@ -31,6 +32,8 @@ class Chart extends React.Component{
             data={this.props.personality}
             svgDimensions={svgDimensions}
           />
+          <text transform={`translate(${20}, ${svgDimensions.height/2 + 13})rotate(-90)`}>Percentile</text>
+          <text transform={`translate(${svgDimensions.width/2 - 40}, ${svgDimensions.height + margins.top - 100})`}>Personality Traits</text>
         </svg>
       </div>
     );

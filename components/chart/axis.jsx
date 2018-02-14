@@ -36,7 +36,8 @@ class Axis extends React.Component{
         className={`Axis Axis-${this.props.orient}`}
         ref={(el) => { this.axisElement = el; }}
         transform={this.props.translate}
-      />
+      >
+      </g>
     );
   }
 }
