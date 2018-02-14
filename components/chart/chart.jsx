@@ -24,7 +24,6 @@ class Chart extends React.Component{
     console.log(yScale)
     return (
       <div className="chart flex-vertical">
-        This is a chart
         <svg width={svgDimensions.width} height={svgDimensions.height}>
           <Axes scales={{xScale, yScale}} margins={margins} svgDimensions={svgDimensions}/>
         </svg>

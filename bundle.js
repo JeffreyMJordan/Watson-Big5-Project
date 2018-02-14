@@ -19465,7 +19465,6 @@ var Chart = function (_React$Component) {
       return _react2.default.createElement(
         "div",
         { className: "chart flex-vertical" },
-        "This is a chart",
         _react2.default.createElement(
           "svg",
           { width: svgDimensions.width, height: svgDimensions.height },
@@ -33122,7 +33121,7 @@ var _assessment_actions = __webpack_require__(76);
 var _lodash = __webpack_require__(581);
 
 var blankPersonality = {
-  personality: []
+  personality: [{ name: 'Openness' }, { name: 'Conscientiousness' }, { name: 'Extraversion' }, { name: 'Agreeableness' }, { name: 'Emotional range' }]
 };
 
 exports.default = function () {
