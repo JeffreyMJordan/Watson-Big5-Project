@@ -19463,9 +19463,6 @@ var Chart = function (_React$Component) {
       })).range([margins.left, svgDimensions.width - margins.right]);
 
       var yScale = this.yScale.domain([0, 100]).range([svgDimensions.height - margins.bottom, margins.top]);
-
-      console.log(xScale);
-      console.log(yScale);
       return _react2.default.createElement(
         "div",
         { className: "chart flex-vertical" },
@@ -33131,7 +33128,8 @@ var _assessment_actions = __webpack_require__(76);
 var _lodash = __webpack_require__(581);
 
 var blankPersonality = {
-  personality: [{ name: 'Openness' }, { name: 'Conscientiousness' }, { name: 'Extraversion' }, { name: 'Agreeableness' }, { name: 'Emotional range' }]
+  personality: [{ name: 'Openness', percentile: 0.0 }, { name: 'Conscientiousness',
+    percentile: 0.0 }, { name: 'Extraversion', percentile: 0.0 }, { name: 'Agreeableness', percentile: 0.0 }, { name: 'Emotional range', percentile: 0.0 }]
 };
 
 exports.default = function () {
@@ -66227,8 +66225,6 @@ exports.default = function (_ref) {
   var scales = _ref.scales,
       margins = _ref.margins,
       svgDimensions = _ref.svgDimensions;
-
-  console.log(scales);
   var height = svgDimensions.height,
       width = svgDimensions.width;
 
@@ -66379,7 +66375,7 @@ var Bars = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Bars.__proto__ || Object.getPrototypeOf(Bars)).call(this, props));
 
-    _this.colorScale = d3.scaleLinear().domain([0, 100]).range(['#F3E5F5', '#7B1FA2']).interpolate(d3.interpolateLab);
+    _this.colorScale = d3.scaleLinear().domain([0, 1]).range(['#F3E5F5', '#7B1FA2']).interpolate(d3.interpolateLab);
     return _this;
   }
 
@@ -66388,11 +66384,14 @@ var Bars = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
+      console.log("re-rendered");
       var _props = this.props,
           scales = _props.scales,
           margins = _props.margins,
           data = _props.data,
           svgDimensions = _props.svgDimensions;
+
+      console.log(data);
       var xScale = scales.xScale,
           yScale = scales.yScale;
       var height = svgDimensions.height;
@@ -66401,13 +66400,13 @@ var Bars = function (_React$Component) {
         return _react2.default.createElement("rect", {
           key: datum.name,
           x: xScale(datum.name),
-          y: yScale(datum.percentile),
-          height: height - margins.bottom - scales.yScale(datum.percentile),
+          y: yScale(datum.percentile * 100),
+          height: height - margins.bottom - scales.yScale(datum.percentile * 100),
           width: xScale.bandwidth(),
           fill: _this2.colorScale(datum.percentile)
         });
       });
-
+      console.log(bars);
       return _react2.default.createElement(
         "g",
         null,

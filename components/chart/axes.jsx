@@ -2,7 +2,6 @@ import React from "react";
 import Axis from './axis';
 
 export default ({scales, margins, svgDimensions}) => {
-  console.log(scales);
   const {height, width} = svgDimensions;
   const xProps = {
     orientation: 'Bottom',
