@@ -1,7 +1,11 @@
 import {RECEIVE_ASSESSMENT} from '../actions/assessment_actions';
 import {merge} from 'lodash';
 
-export default (state={}, action) => {
+const blankPersonality = {
+  personality: []
+};
+
+export default (state=blankPersonality, action) => {
   Object.freeze(state);
   let newState;
   switch(action.type){

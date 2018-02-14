@@ -62,3 +62,4 @@ Actually, lemme do the css first
 
 Ok, so here's the gist of how I make a bar chart in D3 
 I create a Chart component, then have it render a Bar component 
+Follow this link: https://medium.com/@caspg/responsive-chart-with-react-and-d3v4-afd717e57583

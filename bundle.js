@@ -19437,16 +19437,29 @@ var Chart = function (_React$Component) {
   function Chart(props) {
     _classCallCheck(this, Chart);
 
-    return _possibleConstructorReturn(this, (Chart.__proto__ || Object.getPrototypeOf(Chart)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Chart.__proto__ || Object.getPrototypeOf(Chart)).call(this, props));
+
+    _this.xScale = d3.scaleBand();
+    _this.yScale = d3.scaleLinear();
+    return _this;
   }
 
   _createClass(Chart, [{
     key: "render",
     value: function render() {
+      var margins = { top: 50, right: 20, bottom: 100, left: 60 };
+      var svgDimensions = { width: 800, height: 500 };
+      var xScale = this.xScale.padding(0.5).domain(this.props.personality.map(function (trait) {
+        return trait.name;
+      })).range([margins.left, svgDimensions.width - margins.right]);
+
+      var yScale = this.yScale.domain([0, 100]).range([svgDimensions.height - margins.bottom, margins.top]);
+
       return _react2.default.createElement(
         "div",
-        { className: "chart" },
-        "This is a chart"
+        { className: "chart flex-vertical" },
+        "This is a chart",
+        _react2.default.createElement("svg", { width: svgDimensions.width, height: svgDimensions.height })
       );
     }
   }]);
@@ -33096,8 +33109,12 @@ var _assessment_actions = __webpack_require__(76);
 
 var _lodash = __webpack_require__(581);
 
+var blankPersonality = {
+  personality: []
+};
+
 exports.default = function () {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : blankPersonality;
   var action = arguments[1];
 
   Object.freeze(state);
