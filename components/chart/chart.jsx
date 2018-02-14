@@ -20,7 +20,8 @@ class Chart extends React.Component{
     const yScale = this.yScale.domain([0, 100])
                               .range([svgDimensions.height - margins.bottom, margins.top]);
 
-
+    console.log(xScale)
+    console.log(yScale)
     return (
       <div className="chart flex-vertical">
         This is a chart
