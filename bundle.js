@@ -66408,17 +66408,17 @@ var Bars = function (_React$Component) {
       var bars = data.map(function (datum) {
         return _react2.default.createElement(
           "g",
-          null,
+          { transform: "translate(" + xScale(datum.name) + ", " + yScale(datum.percentile * 100) + ")" },
           _react2.default.createElement(
             "text",
-            { x: xScale(datum.name) + 27, y: yScale(datum.percentile * 100) - 3 },
+            { x: "" + xScale.bandwidth() / 2, textAnchor: 'middle' },
             Math.floor(datum.percentile * 100)
           ),
           _react2.default.createElement("rect", {
-            key: datum.name,
-            x: xScale(datum.name),
-            y: yScale(datum.percentile * 100),
-            height: height - margins.bottom - scales.yScale(datum.percentile * 100),
+            key: datum.name
+            // x={xScale(datum.name)}
+            // y={yScale(datum.percentile*100)}
+            , height: height - margins.bottom - scales.yScale(datum.percentile * 100),
             width: xScale.bandwidth(),
             fill: _this2.colorScale(datum.percentile)
           })

@@ -16,14 +16,14 @@ class Bars extends React.Component{
     const bars = (
       data.map(datum => 
         (
-        <g>
-        <text x={xScale(datum.name)+27 } y={yScale(datum.percentile*100)-3}>
+        <g transform={`translate(${xScale(datum.name)}, ${yScale(datum.percentile*100)})`}>
+        <text x={`${xScale.bandwidth()/2}`} textAnchor={'middle'}>
               {Math.floor((datum.percentile*100))}
           </text>
         <rect 
           key={datum.name}
-          x={xScale(datum.name)}
-          y={yScale(datum.percentile*100)}
+          // x={xScale(datum.name)}
+          // y={yScale(datum.percentile*100)}
           height={height - margins.bottom - scales.yScale(datum.percentile*100)}
           width={xScale.bandwidth()}
           fill={this.colorScale(datum.percentile)}
