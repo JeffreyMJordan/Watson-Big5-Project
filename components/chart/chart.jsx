@@ -1,5 +1,6 @@
 import React from "react";
 import * as d3 from "d3";
+import Axes from './axes';
 
 class Chart extends React.Component{
   constructor(props){
@@ -24,7 +25,7 @@ class Chart extends React.Component{
       <div className="chart flex-vertical">
         This is a chart
         <svg width={svgDimensions.width} height={svgDimensions.height}>
-
+          <Axes scales={{xScale, yScale}} margins={margins} svgDimensions={svgDimensions}/>
         </svg>
       </div>
     );

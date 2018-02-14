@@ -19421,6 +19421,10 @@ var _d = __webpack_require__(286);
 
 var d3 = _interopRequireWildcard(_d);
 
+var _axes = __webpack_require__(594);
+
+var _axes2 = _interopRequireDefault(_axes);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -19459,7 +19463,11 @@ var Chart = function (_React$Component) {
         "div",
         { className: "chart flex-vertical" },
         "This is a chart",
-        _react2.default.createElement("svg", { width: svgDimensions.width, height: svgDimensions.height })
+        _react2.default.createElement(
+          "svg",
+          { width: svgDimensions.width, height: svgDimensions.height },
+          _react2.default.createElement(_axes2.default, { scales: { xScale: xScale, yScale: yScale }, margins: margins, svgDimensions: svgDimensions })
+        )
       );
     }
   }]);
@@ -66180,6 +66188,103 @@ function camelize(string) {
 }
 
 module.exports = camelize;
+
+/***/ }),
+/* 594 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _axis = __webpack_require__(595);
+
+var _axis2 = _interopRequireDefault(_axis);
+
+var _babelGenerator = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../../../../Library/Caches/typescript/2.6/node_modules/@types/babel-generator\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+var _babelGenerator2 = _interopRequireDefault(_babelGenerator);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function (_ref) {
+  var scales = _ref.scales,
+      margins = _ref.margins,
+      svgDimensions = _ref.svgDimensions;
+  var height = svgDimensions.height,
+      width = svgDimensions.width;
+
+  var xProps = {
+    orientation: 'Bottom',
+    scale: scales.xScale,
+    translate: "transalte(0, " + (height - margins.bottom) + ")",
+    tickSize: height - margins.top - margins.bottom
+  };
+
+  var yProps = {
+    orientation: 'Left',
+    scale: scales.yScale,
+    translate: "transalte(" + margins.left + ", 0)",
+    tickSize: width - margins.left - margins.right
+  };
+
+  return _react2.default.createElement(
+    "g",
+    null,
+    _react2.default.createElement(_axis2.default, xProps),
+    _react2.default.createElement(_axis2.default, yProps)
+  );
+};
+
+/***/ }),
+/* 595 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _d = __webpack_require__(286);
+
+var d3 = _interopRequireWildcard(_d);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Axis = function (_React$Component) {
+  _inherits(Axis, _React$Component);
+
+  function Axis(props) {
+    _classCallCheck(this, Axis);
+
+    return _possibleConstructorReturn(this, (Axis.__proto__ || Object.getPrototypeOf(Axis)).call(this, props));
+  }
+
+  return Axis;
+}(_react2.default.Component);
+
+exports.default = Axis;
 
 /***/ })
 /******/ ]);
