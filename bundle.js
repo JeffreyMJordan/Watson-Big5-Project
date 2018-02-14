@@ -66406,14 +66406,23 @@ var Bars = function (_React$Component) {
       var height = svgDimensions.height;
 
       var bars = data.map(function (datum) {
-        return _react2.default.createElement("rect", {
-          key: datum.name,
-          x: xScale(datum.name),
-          y: yScale(datum.percentile * 100),
-          height: height - margins.bottom - scales.yScale(datum.percentile * 100),
-          width: xScale.bandwidth(),
-          fill: _this2.colorScale(datum.percentile)
-        });
+        return _react2.default.createElement(
+          "g",
+          null,
+          _react2.default.createElement(
+            "text",
+            { x: xScale(datum.name) + 27 - (datum.percentile * 100).toString().slice(0, 2).length, y: yScale(datum.percentile * 100) - 3 },
+            (datum.percentile * 100).toString().slice(0, 2)
+          ),
+          _react2.default.createElement("rect", {
+            key: datum.name,
+            x: xScale(datum.name),
+            y: yScale(datum.percentile * 100),
+            height: height - margins.bottom - scales.yScale(datum.percentile * 100),
+            width: xScale.bandwidth(),
+            fill: _this2.colorScale(datum.percentile)
+          })
+        );
       });
       console.log(bars);
       return _react2.default.createElement(
